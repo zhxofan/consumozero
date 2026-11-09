@@ -1,0 +1,38 @@
+:root {
+  --fundo: #f3f7f4;
+  --card: #ffffff;
+  --texto: #1d2b24;
+  --suave: #5b6b63;
+  --verde: #2e7d4f;
+  --vermelho: #c0392b;
+  --borda: #d9e3dc;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, Segoe UI, Roboto, sans-serif; background: var(--fundo); color: var(--texto); }
+header { background: var(--verde); color: #fff; padding: 24px 16px; text-align: center; }
+header h1 { margin: 0 0 6px; }
+header p { margin: 0; opacity: .9; }
+main { max-width: 1000px; margin: 0 auto; padding: 16px; display: grid; gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--borda); border-radius: 10px; padding: 16px; }
+h2 { margin-top: 0; font-size: 1.15rem; }
+form { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+label { display: flex; flex-direction: column; gap: 4px; font-size: .9rem; color: var(--suave); }
+input, select { padding: 8px; border: 1px solid var(--borda); border-radius: 6px; font-size: 1rem; }
+.botoes { display: flex; gap: 8px; align-items: end; }
+button { background: var(--verde); color: #fff; border: 0; border-radius: 6px; padding: 9px 14px; cursor: pointer; font-size: .95rem; }
+button.secundario { background: #7a8a82; }
+button.perigo { background: var(--vermelho); }
+button.pequeno { padding: 5px 9px; font-size: .8rem; }
+#mensagem { min-height: 1.2em; font-weight: 600; }
+.ok { color: var(--verde); }
+.falha { color: var(--vermelho); }
+.resumo { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.resumo div { border: 1px solid var(--borda); border-radius: 8px; padding: 10px; }
+.resumo strong { display: block; font-size: 1.3rem; }
+.tabela-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--borda); vertical-align: top; }
+td.acima { color: var(--vermelho); font-weight: 700; }
+td.dentro { color: var(--verde); font-weight: 700; }
+.filtro { flex-direction: row; align-items: center; margin-bottom: 8px; }
+footer { text-align: center; color: var(--suave); font-size: .8rem; padding: 16px; }

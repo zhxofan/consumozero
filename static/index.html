@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConsumoZero</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>💧⚡🥕 ConsumoZero</h1>
+    <p>Registre o consumo do mês e veja se sua casa ou comércio está desperdiçando.</p>
+  </header>
+
+  <main>
+    <section class="card" id="secao-clima">
+      <h2>Previsão da semana</h2>
+      <ul id="alertas-clima"><li>Carregando...</li></ul>
+    </section>
+
+    <section class="card">
+      <h2 id="titulo-form">Novo registro</h2>
+      <form id="form-registro">
+        <input type="hidden" id="id-edicao">
+        <label>Apelido da casa/comércio (não use seu nome)
+          <input id="apelido" required minlength="3" maxlength="40" placeholder="Ex.: Casa Azul">
+        </label>
+        <label>Categoria
+          <select id="categoria">
+            <option value="agua">Água (m³)</option>
+            <option value="energia">Energia (kWh)</option>
+            <option value="alimento">Alimento desperdiçado (kg)</option>
+          </select>
+        </label>
+        <label>Quantidade
+          <input id="quantidade" type="number" step="0.01" min="0.01" max="100000" required>
+        </label>
+        <label>Mês de referência
+          <input id="mes" type="month" required>
+        </label>
+        <label>Pessoas na casa
+          <input id="pessoas" type="number" min="1" max="50" value="1" required>
+        </label>
+        <div class="botoes">
+          <button type="submit" id="btn-salvar">Salvar</button>
+          <button type="button" id="btn-cancelar" class="secundario" hidden>Cancelar edição</button>
+        </div>
+      </form>
+      <p id="mensagem" role="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>Resumo</h2>
+      <div id="resumo" class="resumo"></div>
+    </section>
+
+    <section class="card">
+      <h2>Registros</h2>
+      <label class="filtro">Filtrar:
+        <select id="filtro">
+          <option value="">Todos</option>
+          <option value="agua">Água</option>
+          <option value="energia">Energia</option>
+          <option value="alimento">Alimento</option>
+        </select>
+      </label>
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr><th>Apelido</th><th>Categoria</th><th>Qtd</th><th>Mês</th><th>Pessoas</th><th>% da referência</th><th>Dica</th><th>Ações</th></tr>
+          </thead>
+          <tbody id="corpo-tabela"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>Protótipo acadêmico · dados fictícios · ODS 2, 9, 11 e 13</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
